@@ -1,0 +1,7 @@
+build/
+rime_ice.userdb/
+installation.yaml
+user.yaml
+cn_dicts/
+en_dicts/
+opencc/
