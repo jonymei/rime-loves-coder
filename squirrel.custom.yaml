@@ -1,0 +1,30 @@
+patch:
+  style/color_scheme: ayaya
+  style/color_scheme_dark: purity_of_form_custom
+  preset_color_schemes/+:
+    ayaya:
+      name: "文文／Ayaya"
+      author: "Lufs <i@isteed.cc>"
+
+      alpha: 0.95 # 透明度
+      horizontal: true # 水平排列
+      inline_preedit: true # 单行显示，false 双行显示
+      candidate_format: "%c\u2005%@" # 编号 %c 和候选词 %@ 前后的空间
+      corner_radius: 5 # 候选条圆角
+      border_height: 0
+      border_width: 0
+      font_face: "LXGWWenKai-Regular,PingFangSC" # 候选词字体
+      font_point: 20 # 候选字词大小，默认的16.5似乎有问题，巨大，比20还有大。
+      label_font_face: "LXGWWenKai-Regular,PingFangSC" # 候选词编号字体
+      label_font_point: 12 # 候选编号大小
+
+      # 颜色
+      back_color: 0xFFFFFF # 候选条背景色，24位色值，16进制，ABGR顺序
+      border_color: 0xECE4FC # 边框颜色
+      candidate_text_color: 0x121212 # 预选项文字颜色
+      comment_text_color: 0x8E8E8E # 拼音等提示文字颜色
+      hilited_candidate_back_color: 0xECE4FC # 候选文字背景色
+      hilited_candidate_label_color: 0xB18FF4 # 候选编号颜色
+      hilited_candidate_text_color: 0x7A40EC # 候选文字颜色
+      label_color: 0x888785 # 预选栏编号颜色
+      text_color: 0x8100EB # 高亮选中词颜色
