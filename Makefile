@@ -1,10 +1,10 @@
 .PHONY: full all cn en opencc
 
-full:
-	bash plum/rime-install iDvel/rime-ice:others/recipes/full
-
 all:
 	bash plum/rime-install iDvel/rime-ice:others/recipes/all_dicts
+
+full:
+	bash plum/rime-install iDvel/rime-ice:others/recipes/full
 
 cn:
 	bash plum/rime-install iDvel/rime-ice:others/recipes/cn_dicts
