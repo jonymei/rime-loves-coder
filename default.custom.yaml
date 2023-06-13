@@ -5,6 +5,9 @@ patch:
   menu:
     page_size: 4 # 候选词个数
 
+  switcher/hotkeys:
+    - F4
+
   # 中西文切换
   #
   # good_old_caps_lock:
