@@ -1,4 +1,4 @@
-.PHONY: full all cn en opencc
+.PHONY: full all cn en opencc flypy
 
 all:
 	bash plum/rime-install iDvel/rime-ice:others/recipes/all_dicts
@@ -14,3 +14,6 @@ en:
 
 opencc:
 	bash plum/rime-install iDvel/rime-ice:others/recipes/opencc
+
+flypy:
+	bash plum/rime-install iDvel/rime-ice:others/recipes/config:schema=flypy
