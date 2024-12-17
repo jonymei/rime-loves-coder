@@ -1,24 +1,29 @@
--- 根据是否在用户词典，在结尾加上一个星号 *
--- is_in_user_dict: true           输入过的内容
--- is_in_user_dict: flase 或不写    未输入过的内容
-local function is_in_user_dict(input, env)
-	if not env.is_in_user_dict then
-		local config = env.engine.schema.config
-        env.name_space = env.name_space:gsub('^*', '')
-        env.is_in_user_dict = config:get_bool(env.name_space)
-	end
+-- 根据是否在用户词典，在 comment 上加上一个星号 *
+-- 在 engine/filters 增加 - lua_filter@is_in_user_dict
+-- 在方案里写配置项：
+-- is_in_user_dict: true     为输入过的内容加星号
+-- is_in_user_dict: false    为未输入过的内容加星号
+
+local M = {}
+
+function M.init(env)
+    local config = env.engine.schema.config
+    env.name_space = env.name_space:gsub('^*', '')
+    M.is_in_user_dict = config:get_bool(env.name_space) or nil
+end
+
+local is_user = {
+    user_table = true,
+    user_phrase = true,
+}
+
+function M.func(input)
     for cand in input:iter() do
-        if env.is_in_user_dict then
-            if cand.type == "user_phrase" then
-                cand.comment = cand.comment .. '*'
-            end
-        else
-            if cand.type ~= "user_phrase" then
-                cand.comment = cand.comment .. '*'
-            end
+        if is_user[cand.type] == M.is_in_user_dict then
+            cand.comment = cand.comment .. '*'
         end
         yield(cand)
     end
 end
 
-return is_in_user_dict
+return M
