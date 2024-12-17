@@ -1,4 +1,11 @@
 patch:
+  grammar:
+    language: amz-v2n3m1-zh-hans
+    collocation_max_length: 5
+    collocation_min_length: 2
+  translator/contextual_suggestions: true
+  translator/max_homophones: 7
+  translator/max_homographs: 7
   translator/preedit_format:  # 关闭双拼展开
   engine/processors:
     - lua_processor@select_character
