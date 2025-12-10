@@ -1,8 +1,10 @@
 .PHONY: full all cn en opencc flypy
 
+# update all dictionaries
 all:
 	bash plum/rime-install iDvel/rime-ice:others/recipes/all_dicts
 
+# update dictionaries and configurations for full setup, be careful
 full:
 	bash plum/rime-install iDvel/rime-ice:others/recipes/full
 
