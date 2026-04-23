@@ -1,5 +1,3 @@
-又双叒叕	uuuu
-又双叒叕	yyyy
 ‘’	dyh
 “”	uyh
 （）	kh
@@ -10,4 +8,13 @@
 ？	wh
 ！	gth
 の	vi
+
+又双叒叕	uuuu
+又双叒叕	yyyy
+
 MaaS	maas
+Astron	astron
+
+Manjaro	manjaro
+Xfce	xfce
+Proxmox	proxmox
