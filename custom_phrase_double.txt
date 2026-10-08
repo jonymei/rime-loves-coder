@@ -20,3 +20,4 @@ GuideX	guidex
 Manjaro	manjaro
 Xfce	xfce
 Proxmox	proxmox
+magpie	magpie
