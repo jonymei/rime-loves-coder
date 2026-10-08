@@ -14,6 +14,8 @@
 
 MaaS	maas
 Astron	astron
+Cowork	cowork
+GuideX	guidex
 
 Manjaro	manjaro
 Xfce	xfce

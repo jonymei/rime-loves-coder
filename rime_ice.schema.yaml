@@ -72,7 +72,9 @@ engine:
     - lua_translator@*calc_translator    # 计算器
     - lua_translator@*force_gc           # 暴力 GC
   filters:
-    - lua_filter@*corrector                         # 错音错字提示
+    - lua_filter@*corrector                         # 错音错字提示（须排在 en_hint / zh_hint 之前）
+    - lua_filter@*en_hint                           # 中文候选词英文释义（仅显示，不上屏）
+    - lua_filter@*zh_hint                           # 英文候选词中文释义（仅显示，不上屏）
     - reverse_lookup_filter@radical_reverse_lookup  # 部件拆字滤镜
     - lua_filter@*autocap_filter                    # 英文自动大写
     - lua_filter@*v_filter                          # v 模式 symbols 优先
@@ -153,6 +155,24 @@ reduce_english_filter:
 pin_cand_filter:
   # 格式：编码<Tab>字词1<Space>字词2……
   - d	的
+
+
+# Lua 配置: 候选词英文释义（en_hint.lua）
+# 词典文件：<用户目录>/zh_en.txt，每行「中文<TAB>英文」
+en_hint:
+  enabled: true      # 总开关
+  prefix: '→ '       # 翻译前缀标识（想换样式改这里，如 '[译] '、'译：'，设为 '' 即不显示）
+  separator: ' '     # 与错音错字提示之间的分隔符
+  # max_length: 0    # 释义最大字节数，0 表示不限制
+
+
+# Lua 配置: 英文候选词中文释义（zh_hint.lua）
+# 词典文件：<用户目录>/en_zh.txt，每行「英文<TAB>中文」
+zh_hint:
+  enabled: true      # 总开关
+  prefix: '→ '       # 翻译前缀标识（想换样式改这里，如 '[译] '、'译：'，设为 '' 即不显示）
+  separator: ' '     # 与已有 comment 之间的分隔符
+  # max_length: 0    # 释义最大字节数，0 表示不限制
 
 
 # 主翻译器，拼音

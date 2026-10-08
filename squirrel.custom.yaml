@@ -17,6 +17,7 @@ patch:
       font_point: 20 # 候选字词大小，默认的16.5似乎有问题，巨大，比20还有大。
       label_font_face: "LXGWWenKai-Regular,PingFangSC" # 候选词编号字体
       label_font_point: 12 # 候选编号大小
+      comment_font_point: 14 # 注释（英文释义）字号，小于候选词以作区分（字体不设，继承候选词）
 
       # 颜色
       back_color: 0xFFFFFF # 候选条背景色，24位色值，16进制，ABGR顺序
